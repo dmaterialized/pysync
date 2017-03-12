@@ -46,28 +46,16 @@ def synchelper(profile):
 
 
 
-
-
 def connection(profile):
-  print ("making connection!...")
-  print(".")
-  sleeper(0.25)
-  print("..")
-  sleeper(0.25)
-  print("...")
-  sleeper(0.25)
-  print("....")
-  sleeper(0.25)
-  print(".....")
-  sleeper(0.25)
-  print("......")
-  sleeper(0.25)
+
   print('using profile: '+ profile)
   if profile == "Elysium":
       # needs a counter
        synchelper(profile)
+       print ("making connection!...")
+       dotter(16)
        print("Syncing...")
-
+# don't hardcode profile names...
 
 # and go.
 connection(profile)
