@@ -9,7 +9,7 @@ proc = subprocess.Popen(["ls","-la"],
                 stdin = subprocess.PIPE,
                 stdout = subprocess.PIPE,
                 stderr = subprocess.PIPE,
-                        )
+                        shell=True)
 (out, err) = proc.communicate()
 
 sleepvalue = 0.2
@@ -47,7 +47,6 @@ def synchelper(profile):
 
 
 def connection(profile):
-
   print('using profile: '+ profile)
   if profile == "Elysium":
       # needs a counter
