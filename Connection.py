@@ -4,6 +4,13 @@
 import time, copy
 import shutil, os, subprocess
 
+ip="#"
+# ultimately replace the below with import of a settings file.
+ # with open('settings.xml','r'):
+profile1="Elysium"
+profile2="TimeMachine"
+profile3="Other"
+
 # below is a way to run unix inside python subprocess.
 proc = subprocess.Popen(["ls","-la"],
                 stdin = subprocess.PIPE,
@@ -12,26 +19,19 @@ proc = subprocess.Popen(["ls","-la"],
                         shell=True)
 (out, err) = proc.communicate()
 
-sleepvalue = 0.2
+sleepvalue = 0.21
 def sleeper(sleeps):
     time.sleep(sleeps)
 
 def dotter(dots):
-    #pass dotter(5) as example
     tick = 1
     while tick <= dots:
-        print(". "*tick)
+        print(". " * tick)
         sleeper(sleepvalue)
         tick=tick+1
 
-dotter(4)
+dotter(8)
 
-ip="#"
-# ultimately replace the below with import of a settings file.
- # with open('settings.xml','r'):
-profile1="Elysium"
-profile2="TimeMachine"
-profile3="Other"
 profile=input("please pick a profile: "+profile1+", "+profile2+", "+profile3+": ")
 
 def synchelper(profile):
@@ -43,18 +43,24 @@ def synchelper(profile):
         print("using IP address: "+ip)
     else:
         ip=input("please enter the IP address")
+    if ip != "":
+        # rsync -rltDWz src/ dest/
 
 
 
+<<<<<<< Updated upstream
 def connection(profile):
+=======
+
+def makeConnection(profile):
+>>>>>>> Stashed changes
   print('using profile: '+ profile)
   if profile == "Elysium":
-      # needs a counter
        synchelper(profile)
        print ("making connection!...")
        dotter(16)
        print("Syncing...")
+
 # don't hardcode profile names...
 
-# and go.
-connection(profile)
+makeConnection(profile)
