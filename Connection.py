@@ -6,7 +6,7 @@ import shutil, os, subprocess
 
 ip="#"
 # ultimately replace the below with import of a settings file.
- # with open('settings.xml','r'):
+# with open('settings.xml','r'):
 profile1="Elysium"
 profile2="TimeMachine"
 profile3="Other"
